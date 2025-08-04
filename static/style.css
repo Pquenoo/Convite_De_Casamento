@@ -296,11 +296,11 @@ p {
 
 /* animação simples do flip */
 .flip-card.flip .front {
-  animation: flipFront 0.5s forwards;
+  animation: flipFront 0.1s forwards;
 }
 
 .flip-card.flip .back {
-  animation: flipBack 0.5s forwards;
+  animation: flipBack 0.1s forwards;
 }
 
 @keyframes flipFront {
@@ -313,3 +313,46 @@ p {
   100% { transform: rotateX(0deg); }
 }
 
+.timeline-wrapper {
+  width: 100%;
+  overflow: hidden;
+  border-top: 3px solid #c1440e;
+  border-bottom: 3px solid #c1440e;
+  margin: 20px 0;
+}
+
+.timeline-horizontal {
+  display: flex;
+  gap: 20px;
+  white-space: nowrap;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  scrollbar-width: none; /* Firefox */
+}
+
+.timeline-horizontal::-webkit-scrollbar {
+  display: none; /* Chrome, Safari e Edge */
+}
+
+.event {
+  flex: 0 0 220px;
+  background-color: #fff3ed;
+  border-radius: 12px;
+  padding: 15px 20px;
+  box-shadow: 0 4px 10px rgba(193, 68, 14, 0.3);
+  user-select: none;
+  font-family: Arial, sans-serif;
+  color: #5a2a1d;
+}
+
+.year {
+  font-weight: 700;
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: #c1440e;
+}
+
+.desc {
+  font-size: 16px;
+  line-height: 1.3;
+}
