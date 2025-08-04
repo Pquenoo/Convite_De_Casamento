@@ -146,7 +146,7 @@ p {
 }
 
 /* Responsividade para telas menores */
-@media (max-width: 768px) {
+@media (max-width: 932px) {
   h1 {
     font-size: 1.5em;
   }
@@ -178,17 +178,17 @@ p {
   display: flex;
   gap: 10px;
   overflow: hidden;
-  height: 200px; /* ou o tamanho que quiser */
+  height: 240px; /* ou o tamanho que quiser */
 }
 
 .div img {
   filter: saturate(0%);
-  width: 10%;
+  width: 15%;
   height: 100%;
   object-fit: cover;
   border: 2px solid whitesmoke;
-  border-radius: 12px;
-  transition: all ease 0.4s;
+  border-radius: 22px;
+  transition: all ease 0.7s;
   cursor: pointer;
 }
 
@@ -238,3 +238,78 @@ p {
 .btn-mapa:hover {
   background-color: #a4370c;
 }
+
+.flip-clock {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  font-family: 'Courier New', Courier, monospace;
+  margin: 20px auto;
+  max-width: 600px;
+}
+
+.flip-unit {
+  text-align: center;
+}
+
+.label {
+  margin-top: 8px;
+  font-weight: bold;
+  color: #c1440e;
+}
+
+.flip-card {
+  position: relative;
+  width: 60px;
+  height: 80px;
+  perspective: 400px;
+}
+
+.flip-card div {
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  line-height: 40px;
+  font-size: 30px;
+  color: white;
+  background: #c1440e;
+  border-radius: 6px;
+  backface-visibility: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  user-select: none;
+}
+
+.front {
+  top: 0;
+  border-bottom: 1px solid #a4370c;
+  transform-origin: bottom;
+  z-index: 2;
+}
+
+.back {
+  bottom: 0;
+  border-top: 1px solid #a4370c;
+  transform-origin: top;
+  transform: rotateX(180deg);
+  z-index: 1;
+}
+
+/* animação simples do flip */
+.flip-card.flip .front {
+  animation: flipFront 0.5s forwards;
+}
+
+.flip-card.flip .back {
+  animation: flipBack 0.5s forwards;
+}
+
+@keyframes flipFront {
+  0% { transform: rotateX(0deg); }
+  100% { transform: rotateX(-180deg); }
+}
+
+@keyframes flipBack {
+  0% { transform: rotateX(180deg); }
+  100% { transform: rotateX(0deg); }
+}
+
