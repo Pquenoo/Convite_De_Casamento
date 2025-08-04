@@ -25,6 +25,28 @@ h1 {
   text-align: center;
 }
 
+/* Classes de animação */
+.cssanimation {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+.ca__fx-clipCircleExpandIn {
+  animation-name: clipCircleExpandIn;
+}
+
+/* Animação circular */
+@keyframes clipCircleExpandIn {
+  0% {
+    clip-path: circle(0% at 50% 50%);
+    opacity: 0;
+  }
+  100% {
+    clip-path: circle(150% at 50% 50%);
+    opacity: 1;
+  }
+}
+
 /* Parágrafo */
 p {
   font-family: 'Merienda', sans-serif;
