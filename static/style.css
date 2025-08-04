@@ -1,0 +1,218 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+}
+
+/* Fundo */
+body {
+  background-image: url("img/background1.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  background-color: #fffaf7; /* Cor de apoio */
+}
+
+/* Título */
+h1 {
+  font-family: 'Parisienne', 'Tangerine', cursive;
+  font-size: 10em;
+  color: #ff7f50; /* terracota */
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* Parágrafo */
+p {
+  font-family: 'Merienda', sans-serif;
+  font-size: 1.1em;
+  color: #6b4000;
+  line-height: 1.5;
+  text-align: center;
+  padding: 0 20px;
+}
+
+/* Centralizar conteúdo */
+.centralizado {
+  padding: 40px 20px;
+}
+
+/* Linha divisória */
+.divisor {
+  width: 90px;
+  height: 3px;
+  background-color: #C1440E;
+  border: none;
+  margin: 20px auto;
+}
+
+/* Linha do tempo horizontal */
+.timeline-horizontal {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 40px 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  font-family: Arial, sans-serif;
+  border-top: 2px solid #C1440E;
+  scroll-behavior: smooth;
+}
+
+/* Evento da linha do tempo */
+.timeline-horizontal .event {
+  min-width: 120px;
+  flex-shrink: 0;
+  scroll-snap-align: start;
+  position: relative;
+  text-align: center;
+}
+
+/* Bolinha acima do evento */
+.timeline-horizontal .event::before {
+  content: '';
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 12px;
+  height: 12px;
+  background: #C1440E;
+  transform: translateX(-50%) rotate(-45deg);
+  border: 3px solid white;
+  z-index: 1;
+}
+
+.timeline-horizontal .event::before::before,
+.timeline-horizontal .event::before::after {
+  content: '';
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: #C1440E;
+  border-radius: 50%;
+  border: 3px solid white;
+}
+
+.timeline-horizontal .event::before::before {
+  top: -6px;
+  left: 0;
+}
+
+.timeline-horizontal .event::before::after {
+  top: 0;
+  left: 6px;
+}
+
+
+
+/* Ano do evento */
+.timeline-horizontal .year {
+  font-weight: bold;
+  color: #db9a5e;
+  margin-bottom: 8px;
+  font-size: 1.1em;
+}
+
+/* Descrição do evento */
+.timeline-horizontal .desc {
+  color: #6b4000;
+  font-size: 0.9em;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.5em;
+  }
+
+  p {
+    font-size: 1em;
+    padding: 0 10px;
+  }
+
+  .timeline-horizontal {
+    gap: 10px;
+    padding: 20px 10px;
+  }
+
+  .timeline-horizontal .event {
+    position: relative;
+  }
+
+  .timeline-horizontal .desc {
+    font-size: 0.85em;
+  }
+
+  .centralizado {
+    padding: 20px 10px;
+  }
+}
+
+.div {
+  display: flex;
+  gap: 10px;
+  overflow: hidden;
+  height: 200px; /* ou o tamanho que quiser */
+}
+
+.div img {
+  filter: saturate(0%);
+  width: 10%;
+  height: 100%;
+  object-fit: cover;
+  border: 2px solid whitesmoke;
+  border-radius: 12px;
+  transition: all ease 0.4s;
+  cursor: pointer;
+}
+
+.div img:hover {
+  filter: saturate(100%);
+  flex-grow: 1;
+  width: auto;
+}
+
+.info-evento {
+  background-color: #fff3ed; /* tom terracota claro */
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  max-width: 500px;
+  margin: 30px auto;
+  font-family: Arial, sans-serif;
+  color: #5a2a1d;
+}
+
+.info-evento h2 {
+  margin-bottom: 15px;
+  color: #c1440e;
+  font-size: 22px;
+  text-align: center;
+}
+
+.info-evento p {
+  font-size: 16px;
+  margin: 8px 0;
+}
+.botao-container {
+  text-align: center; /* centraliza o botão */
+}
+.btn-mapa {
+  display: inlin-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #d39963;
+  color: #5a2a1d;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.btn-mapa:hover {
+  background-color: #a4370c;
+}
